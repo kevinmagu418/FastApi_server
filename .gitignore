@@ -1,0 +1,35 @@
+# Byte-compiled / Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# IDE settings
+.vscode/
+.idea/
+
+# Python logs
+*.log
+
+# macOS
+.DS_Store
+
+# FastAPI / general
+*.sqlite3
+
+# Model weights (PyTorch)
+app/models/weights/*.pth
+
+# Any other large data files
+*.zip
+*.tar.gz
+*.h5
+*.ckpt
+
+# Coverage reports
+.coverage
+htmlcov/
