@@ -1,48 +1,54 @@
 from PIL import Image
 import torch
 import torch.nn.functional as F
+from typing import Dict
 
 from app.models.loader import load_model
 from app.utils.image import preprocess_image, confidence_to_severity
 from app.core.registry import MODEL_REGISTRY
 
+# Cache loaded models here
+LOADED_MODELS: Dict[str, torch.nn.Module] = {}
+
+def load_model_cached(crop: str) -> torch.nn.Module:
+    """
+    Load a model once and reuse it.
+    """
+    if crop not in LOADED_MODELS:
+        LOADED_MODELS[crop] = load_model(crop)
+    return LOADED_MODELS[crop]
+
+def preload_all_models() -> None:
+    """
+    Preload all models at startup.
+    """
+    print("Preloading all crop models...")
+    for crop in MODEL_REGISTRY.keys():
+        try:
+            load_model_cached(crop)
+            print(f" Loaded model: {crop}")
+        except Exception as e:
+            print(f" Failed to load {crop}: {e}")
+    print("All models preloaded!")
+
 def predict_crop(crop: str, image: Image.Image) -> dict:
     """
     Predict disease for a given crop image.
-    
-    Args:
-        crop (str): Crop name, e.g., "tomato"
-        image (PIL.Image.Image): Input image
-    
-    Returns:
-        dict: {
-            "crop": str,
-            "disease": str,          # raw label
-            "display_label": str,    # human-readable label
-            "confidence": float,     # 0-1
-            "severity": str          # High/Medium/Low
-        }
     """
-    # Load model
-    model = load_model(crop)
-
-    # Ensure tensor is on same device as model
+    model = load_model_cached(crop)
     device = next(model.parameters()).device
     tensor = preprocess_image(image).to(device)
 
-    # Inference
     model.eval()
     with torch.no_grad():
         outputs = model(tensor)
         probs = F.softmax(outputs, dim=1)
         confidence, idx = torch.max(probs, dim=1)
 
-    # Convert results to Python types
     idx = idx.item()
     confidence = confidence.item()
     severity = confidence_to_severity(confidence)
 
-    # Map to labels
     raw_label = MODEL_REGISTRY[crop]['classes'][idx]
     display_label = MODEL_REGISTRY[crop]['display_classes'][idx]
 
