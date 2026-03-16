@@ -5,6 +5,10 @@ from app.services.inference import preload_all_models, LOADED_MODELS
 
 app = FastAPI(title="Crop Disease Detection API")
 
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the Crop Disease Detection API. Visit /docs for documentation."}
+
 # Configure CORS
 app.add_middleware(
     CORSMiddleware,
