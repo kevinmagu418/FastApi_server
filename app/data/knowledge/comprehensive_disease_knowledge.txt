@@ -1,0 +1,179 @@
+Apple Scab (Venturia inaequalis)
+Symptoms: Olive-green to black velvety spots on leaves; scabby, cracked spots on fruit.
+Chemical Treatment: Apply fungicides containing captan, myclobutanil, or sulfur early in the season (green tip to petal fall).
+Organic Treatment: Use sulfur sprays or potassium bicarbonate. Remove fallen leaves in autumn to reduce overwintering spores.
+Prevention: Plant resistant varieties (e.g., Liberty, Goldrush). Prune trees to improve air circulation and sunlight penetration.
+
+Apple Black Rot (Botryosphaeria obtusa)
+Symptoms: Purple spots on leaves that turn brown with a purple margin ("frog-eye" leaf spot); rotting fruit with concentric bands; cankers on limbs.
+Chemical Treatment: Apply fungicides like captan or thiophanate-methyl. Treat from silver tip through harvest.
+Organic Treatment: Prune out dead wood and remove mummified fruit (major sources of spores). Use copper-based sprays during dormancy.
+Prevention: Maintain tree health through proper fertilization and watering. Remove prunings from the orchard immediately.
+
+Apple Cedar Apple Rust (Gymnosporangium juniperi-virginianae)
+Symptoms: Bright orange-yellow spots on apple leaves; galls on nearby cedar/juniper trees.
+Chemical Treatment: Apply sterol-inhibiting fungicides (SI) like myclobutanil or fenarimol starting at the pink bud stage.
+Organic Treatment: Remove nearby cedar/juniper trees or prune out their galls in late winter. Use sulfur sprays.
+Prevention: Plant resistant apple varieties. Maintain a distance of at least 500 feet from eastern red cedar trees if possible.
+
+Bean Angular Leaf Spot (Phaeoisariopsis griseola)
+Symptoms: Angular brown spots on leaves bounded by veins; reddish-brown spots on pods.
+Chemical Treatment: Use fungicides containing azoxystrobin, pyraclostrobin, or copper hydroxide.
+Organic Treatment: Use copper-based bactericides. Remove infected crop residue.
+Prevention: Use certified disease-free seed. Practice a 2-3 year crop rotation with non-legumes. avoid overhead irrigation.
+
+Bean Rust (Uromyces appendiculatus)
+Symptoms: Rust-colored pustules on the undersides of leaves, often surrounded by a yellow halo.
+Chemical Treatment: Apply fungicides containing chlorothalonil, mancozeb, or sulfur at the first sign of disease.
+Organic Treatment: Use sulfur dust or wettable sulfur. Apply neem oil early in infection.
+Prevention: Plant resistant varieties. Rotate crops. Plow under crop debris after harvest to bury spores.
+
+Bell Pepper Bacterial Spot (Xanthomonas campestris pv. vesicatoria)
+Symptoms: Small, water-soaked spots on leaves that turn brown/black; raised, scab-like spots on fruit.
+Chemical Treatment: Apply fixed copper mixed with mancozeb to reduce bacterial populations.
+Organic Treatment: Use copper sprays certified for organic use. Treat seeds with hot water or dilute bleach solution before planting.
+Prevention: Use disease-free seeds and transplants. Rotate with non-solanaceous crops. Mulch to reduce soil splash.
+
+Cassava Bacterial Blight (Xanthomonas axonopodis pv. manihotis)
+Symptoms: Water-soaked angular leaf spots, blight, wilting, dieback, and gum exudation on stems.
+Chemical Treatment: Chemical control is generally not economically feasible or effective; focus on cultural practices. Copper sprays may reduce spread in nurseries.
+Organic Treatment: Prune infected parts and destroy them. Use varying intercropping systems.
+Prevention: Use resistant cultivars. Use healthy planting material (stakes). Clean tools with bleach between plants.
+
+Cassava Brown Streak Disease (CBSD) (Ipomovirus)
+Symptoms: Yellow chlorosis on leaves (feathery pattern); brown, corky necrosis within the storage roots (tuber).
+Chemical Treatment: No chemical cure exists for the virus itself. Control the whitefly vector using imidacloprid or similar insecticides (though often impractical for smallholders).
+Organic Treatment: Rogue (remove and destroy) infected plants immediately. Use clean planting material.
+Prevention: Plant certified virus-free stem cuttings. Control whitefly populations. Isolate new plantings from older, infected fields.
+
+Cassava Green Mottle (CGMV) (Nepovirus)
+Symptoms: Mosaic, mottling, and leaf deformation; stunted growth.
+Chemical Treatment: None.
+Organic Treatment: Remove and burn infected plants.
+Prevention: Use virus-free planting stakes. Implement strict quarantine measures.
+
+Cassava Mosaic Disease (CMD) (Begomovirus)
+Symptoms: Severe mosaic, mottling, and distortion of leaves; stunted plants.
+Chemical Treatment: Control whitefly vectors with systemic insecticides, though difficult.
+Organic Treatment: Use resistant varieties (most effective). Phytosanitation (removing diseased plants).
+Prevention: Plant resistant varieties (e.g., TME 419). Select planting material only from symptom-free plants.
+
+Cherry Powdery Mildew (Podosphaera clandestina)
+Symptoms: White, powdery fungal growth on new leaves and shoots; curling of leaves.
+Chemical Treatment: Apply fungicides like myclobutanil, sulfur, or fenbuconazole at petal fall and continuing through the season.
+Organic Treatment: Use sulfur, potassium bicarbonate, or neem oil.
+Prevention: Prune for good air circulation. Remove suckers which are often the first to be infected.
+
+Grape Black Rot (Guignardia bidwellii)
+Symptoms: Reddish-brown spots on leaves; fruit turns brown, shrivels, and becomes a hard black "mummy".
+Chemical Treatment: Apply fungicides containing mancozeb, captan, or ziram from bud break through fruit set.
+Organic Treatment: Remove and destroy all mummified fruit from the vine and ground during winter pruning. Copper sprays can help.
+Prevention: Plant resistant varieties. Ensure good airflow and sunlight exposure by pruning and trellis management.
+
+Grape Esca (Black Measles) (Fungal complex)
+Symptoms: "Tiger stripe" pattern on leaves (yellow/red between veins); dark spots on berries ("measles"); sudden wilting.
+Chemical Treatment: No highly effective chemical cure for established infections. Wound protectants (e.g., boric acid based) on pruning cuts can prevent infection.
+Organic Treatment: Remove and burn infected vines or vine parts.
+Prevention: Protect pruning wounds. Avoid water stress. Replant with certified disease-free vines.
+
+Grape Leaf Blight (Isariopsis Leaf Spot) (Pseudocercospora vitis)
+Symptoms: Irregular dark red to brown spots on leaves; can cause premature defoliation.
+Chemical Treatment: Fungicides used for downy mildew or black rot (mancozeb, copper) often control this.
+Organic Treatment: Copper-based fungicides.
+Prevention: Remove and burn infected leaves. Improve air circulation.
+
+Maize Cercospora Leaf Spot (Gray Leaf Spot) (Cercospora zeae-maydis)
+Symptoms: Rectangular, gray-to-tan lesions running parallel to leaf veins.
+Chemical Treatment: Apply fungicides containing azoxystrobin or pyraclostrobin at tasseling (VT) to silking (R1) stages.
+Organic Treatment: Rotate with non-grass crops for at least 2 years.
+Prevention: Plant resistant hybrids. Manage residue by tillage (if appropriate for soil conservation) to reduce fungus overwintering.
+
+Maize Common Rust (Puccinia sorghi)
+Symptoms: Oval to elongate cinnamon-brown pustules on both leaf surfaces.
+Chemical Treatment: Foliar fungicides (strobilurins/triazoles) can be effective if applied early, but usually only economical for sweet corn or seed corn.
+Organic Treatment: Early planting can help avoid severe infection.
+Prevention: Plant resistant hybrids (most effective).
+
+Maize Northern Leaf Blight (Exserohilum turcicum)
+Symptoms: Long, cigar-shaped gray-green to tan lesions on leaves.
+Chemical Treatment: Apply fungicides (e.g., mancozeb, propiconazole) if lesions appear before silking.
+Organic Treatment: Crop rotation.
+Prevention: Plant resistant hybrids. Tillage to bury infected residue (balance with soil erosion risks).
+
+Peach Bacterial Spot (Xanthomonas campestris pv. pruni)
+Symptoms: Small, water-soaked spots on leaves that turn brown and drop out ("shot-hole"); sunken, cracked spots on fruit.
+Chemical Treatment: Copper sprays at leaf drop (autumn) and before bud break. Antibiotic (oxytetracycline) sprays during the growing season.
+Organic Treatment: Copper products (carefully to avoid phytotoxicity). Clay-based sprays (Surround) may reduce injury.
+Prevention: Plant resistant varieties (e.g., Candor, Norman). Plant in sites with good air circulation.
+
+Potato Early Blight (Alternaria solani)
+Symptoms: Brown spots with concentric rings ("bullseye") on older leaves; yellowing around spots.
+Chemical Treatment: Apply fungicides containing chlorothalonil, mancozeb, or azoxystrobin.
+Organic Treatment: Copper fungicides. Bacillus subtilis biological controls.
+Prevention: Maintain plant vigor with proper nitrogen and irrigation. Rotate crops (3-4 years). Remove volunteer potatoes.
+
+Potato Late Blight (Phytophthora infestans)
+Symptoms: Large, dark water-soaked spots on leaves with white fungal growth on undersides in humid weather; tuber rot.
+Chemical Treatment: Apply systemic fungicides (metalaxyl, mefenoxam) or protectants (mancozeb, chlorothalonil) preventatively.
+Organic Treatment: Copper-based fungicides applied regularly. Destroy cull piles.
+Prevention: Plant certified disease-free seed tubers. Destroy volunteer plants. Kill vines 2 weeks before harvest.
+
+Strawberry Leaf Scorch (Diplocarpon earliana)
+Symptoms: Irregular purple blotches on leaves that coalesce and turn brown/scorched.
+Chemical Treatment: Apply fungicides like captan or thiophanate-methyl.
+Organic Treatment: Remove and destroy infected leaves. Copper or sulfur sprays.
+Prevention: Renovate strawberry beds annually. Plant resistant varieties. Ensure good soil drainage.
+
+Tomato Bacterial Spot (Xanthomonas spp.)
+Symptoms: Small, dark, water-soaked spots on leaves; raised, scabby spots on fruit.
+Chemical Treatment: Fixed copper mixed with mancozeb. Apply when conditions favor disease (warm/wet).
+Organic Treatment: Copper sprays. Bacteriophages (AgriPhage) specifically target the bacteria.
+Prevention: Use disease-free seed and transplants. Avoid overhead irrigation. Mulch to reduce soil splash.
+
+Tomato Early Blight (Alternaria solani)
+Symptoms: Brown spots with concentric rings on lower leaves; yellowing foliage.
+Chemical Treatment: Chlorothalonil, mancozeb, or copper fungicides applied on a schedule.
+Organic Treatment: Copper fungicides, Bacillus subtilis (Serenade), or sodium bicarbonate sprays.
+Prevention: Stake or cage plants to keep foliage off the ground. Mulch. Rotate crops.
+
+Tomato Late Blight (Phytophthora infestans)
+Symptoms: Large, dark, greasy-looking spots on leaves and stems; white fuzzy growth in wet weather; fruit rot.
+Chemical Treatment: Chlorothalonil (preventative). Systemics like propamocarb for active infections.
+Organic Treatment: Copper fungicides preventatively. Remove and bag infected plants immediately.
+Prevention: Plant resistant varieties (e.g., Mountain Magic, Defiant). Avoid overhead watering.
+
+Tomato Leaf Mold (Passalora fulva)
+Symptoms: Pale yellow spots on upper leaf surface; olive-green velvety mold on undersides.
+Chemical Treatment: Fungicides containing chlorothalonil, mancozeb, or copper.
+Organic Treatment: Copper or sulfur sprays. Improve ventilation in high tunnels/greenhouses.
+Prevention: Use resistant varieties. maximize air circulation. Keep greenhouse humidity below 85%.
+
+Tomato Septoria Leaf Spot (Septoria lycopersici)
+Symptoms: Small, circular spots with gray centers and dark borders; tiny black specs in the center.
+Chemical Treatment: Chlorothalonil or copper fungicides.
+Organic Treatment: Remove lower infected leaves. Copper sprays.
+Prevention: Mulch to prevent soil splash. Water at the base of the plant. Rotate crops for 3 years.
+
+Tomato Spider Mites (Tetranychus urticae)
+Symptoms: Stippling (tiny yellow dots) on leaves; fine webbing; leaves turning bronze/yellow.
+Chemical Treatment: Miticides (e.g., abamectin, bifenthrin).
+Organic Treatment: Insecticidal soap or neem oil. Predatory mites (Phytoseiulus persimilis). High pressure water sprays.
+Prevention: Avoid water stress (mites thrive on dry, stressed plants). Control weeds.
+
+Tomato Target Spot (Corynespora cassiicola)
+Symptoms: Brown-black lesions with faint concentric rings; fruit lesions are sunken and cracked.
+Chemical Treatment: Fungicides such as azoxystrobin or chlorothalonil.
+Organic Treatment: Copper fungicides.
+Prevention: Improve airflow. Avoid overhead irrigation. Remove crop residue.
+
+Tomato Yellow Leaf Curl Virus (TYLCV) (Begomovirus)
+Symptoms: Upward curling of leaf margins; yellowing (chlorosis); stunted growth; flower drop.
+Chemical Treatment: Control the vector (silverleaf whitefly) with imidacloprid or dinotefuran.
+Organic Treatment: Neem oil or insecticidal soap for whiteflies. Reflective mulches to repel whiteflies.
+Prevention: Plant resistant varieties (e.g., Tycoon). Use fine mesh screens in greenhouses. Remove infected plants immediately (roguing).
+
+Tomato Mosaic Virus (ToMV) (Tobamovirus)
+Symptoms: Mottling (light/dark green pattern) on leaves; fern-like leaf distortion; internal browning of fruit.
+Chemical Treatment: None.
+Organic Treatment: Remove infected plants. Wash hands with milk or TSP (trisodium phosphate) to deactivate virus.
+Prevention: Use resistant varieties. Disinfect tools. Avoid using tobacco products around plants (tobacco can carry the virus).

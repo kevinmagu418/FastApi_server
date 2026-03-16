@@ -4,3 +4,8 @@ torch
 torchvision
 pillow
 requests
+groq
+python-dotenv
+sentence-transformers
+numpy
+python-multipart

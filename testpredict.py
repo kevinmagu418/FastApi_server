@@ -1,33 +1,28 @@
 import requests
-import base64
 from pathlib import Path
 
 # === CONFIG ===
-API_URL = "http://127.0.0.1:8000/api/predict"  # FastAPI endpoint
-TEST_IMAGE_PATH = Path("app/testimage.png")  #  test image 
-CROP = "cassava"  # change to the crop you want to test
+API_URL = "http://127.0.0.1:8000/api/predict"
+TEST_IMAGE_PATH = Path("app/testimage.png")
+CROP = "tomato"  # Testing cassava as per registry
 
-#  Encode image in Base64 
 if not TEST_IMAGE_PATH.exists():
-    raise FileNotFoundError(f"Test image not found: {TEST_IMAGE_PATH}")
+    print(f"Error: {TEST_IMAGE_PATH} not found.")
+    exit()
 
+#  Build multipart form-data
 with open(TEST_IMAGE_PATH, "rb") as f:
-    image_bytes = f.read()
-image_base64 = base64.b64encode(image_bytes).decode("utf-8")
+    files = {"file": (TEST_IMAGE_PATH.name, f, "image/png")}
+    data = {"crop": CROP}
 
-#  Build request payload 
-payload = {
-    "crop": CROP,
-    "image_base64": image_base64
-}
-
-# Send POST request
-response = requests.post(API_URL, json=payload)
+    print(f"Sending request to {API_URL} for crop: {CROP}...")
+    response = requests.post(API_URL, files=files, data=data)
 
 # Check response
 if response.status_code == 200:
-    print("Prediction Response:")
-    print(response.json())
+    import json
+    print("Success! Prediction and Recommendation:")
+    print(json.dumps(response.json(), indent=2))
 else:
-    print(" Request failed:")
+    print("Request failed:")
     print(response.status_code, response.text)
