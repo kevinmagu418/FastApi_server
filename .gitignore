@@ -24,8 +24,8 @@ env/
 # FastAPI / general
 *.sqlite3
 
-# Model weights (PyTorch)
-app/models/weights/*.pth
+# Model weights (PyTorch) - Removed ignore to allow Railway access
+# app/models/weights/*.pth
 
 # Any other large data files
 *.zip
