@@ -21,7 +21,7 @@ class RecommendationResponse(BaseModel):
 class PredictionResponse(BaseModel):
     crop: str
     disease: str
-    display_label: str
+    raw_disease: str
     confidence: float
     severity: str
     recommendation: Optional[RecommendationResponse] = None
@@ -60,7 +60,12 @@ async def predict_endpoint(
     # Generate Recommendation via RAG + Groq
     recommendation = rec_engine.generate_recommendation(result)
     
-    # Merge result with recommendation
-    result["recommendation"] = recommendation
-
-    return result
+    # Ensure the final response has the keys the Edge Function expects
+    return {
+        "crop": result["crop"],
+        "disease": result["display_label"], # Use the clean label for the DB 'name'
+        "raw_disease": result["disease"],   # Keep the raw label for debugging
+        "confidence": result["confidence"],
+        "severity": result["severity"],
+        "recommendation": recommendation
+    }
