@@ -14,9 +14,10 @@ router = APIRouter()
 class RecommendationResponse(BaseModel):
     disease: str
     severity: str
-    chemical_treatment: str
-    organic_treatment: str
-    prevention: str
+    chemical_treatment: Optional[str] = None
+    organic_treatment: Optional[str] = None
+    prevention: Optional[str] = None
+    error: Optional[str] = None
 
 class PredictionResponse(BaseModel):
     crop: str
