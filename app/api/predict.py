@@ -59,17 +59,24 @@ async def predict_endpoint(
         raw_rec = rec_engine.generate_recommendation(result)
         
         # 8. Normalize recommendation structure exactly as required
-        if raw_rec and isinstance(raw_rec, dict) and "error" not in raw_rec:
-            recommendation = {
-                "disease": str(raw_rec.get("disease", result.get("display_label", "unknown"))),
-                "severity": str(raw_rec.get("severity", result.get("severity", "medium"))),
-                "chemical_treatment": str(raw_rec.get("chemical_treatment", "Not specified")),
-                "organic_treatment": str(raw_rec.get("organic_treatment", "Not specified")),
-                "prevention": str(raw_rec.get("prevention", "Not specified"))
-            }
+        # Now raw_rec will always have these fields due to the fallback in generate_recommendation
+        recommendation = {
+            "disease": str(raw_rec.get("disease", result.get("display_label", "unknown"))),
+            "severity": str(raw_rec.get("severity", result.get("severity", "medium"))),
+            "chemical_treatment": str(raw_rec.get("chemical_treatment", "Not specified")),
+            "organic_treatment": str(raw_rec.get("organic_treatment", "Not specified")),
+            "prevention": str(raw_rec.get("prevention", "Not specified"))
+        }
     except Exception as e:
         logger.error(f"Recommendation engine error: {str(e)}")
-        recommendation = None  # If it fails → return recommendation = null
+        # Ultimate fallback if even the engine's internal fallback fails
+        recommendation = {
+            "disease": str(result.get("display_label", "unknown")),
+            "severity": str(result.get("severity", "medium")),
+            "chemical_treatment": "Consult a local agricultural expert.",
+            "organic_treatment": "Remove infected parts and improve hygiene.",
+            "prevention": "Ensure proper spacing and resistant varieties."
+        }
 
     # 6 & 7. Normalize final response BEFORE returning
     # Always return disease, confidence, severity, recommendation

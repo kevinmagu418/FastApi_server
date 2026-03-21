@@ -63,6 +63,16 @@ class RecommendationEngine:
         crop = disease_data.get("crop", "Unknown Crop")
         severity = disease_data.get("severity", "Unknown Severity")
         
+        # 0. Handle Healthy Case
+        if "healthy" in disease_name.lower() or "healthy" in disease_data.get("disease", "").lower():
+            return {
+                "disease": "Healthy",
+                "severity": "Low",
+                "chemical_treatment": "None required.",
+                "organic_treatment": "None required. Maintain regular watering and fertilization.",
+                "prevention": "Continue monitoring and practice good crop rotation."
+            }
+
         # 1. Retrieval
         query = f"treatment and prevention for {disease_name} in {crop}"
         context = self.vector_store.query(query)
@@ -104,6 +114,14 @@ class RecommendationEngine:
             )
             return json.loads(chat_completion.choices[0].message.content)
         except Exception as e:
-            return {"error": str(e), "disease": disease_name, "severity": severity}
+            # Fallback to a structured response even on error
+            return {
+                "error": str(e),
+                "disease": disease_name,
+                "severity": severity,
+                "chemical_treatment": "Consult a local agricultural expert for chemical options.",
+                "organic_treatment": "Improve air circulation and remove infected leaves.",
+                "prevention": "Practice crop rotation and use resistant varieties."
+            }
 
 engine = RecommendationEngine()
