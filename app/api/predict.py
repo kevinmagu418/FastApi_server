@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException, UploadFile, File, Form
-from pydantic import BaseModel
 from typing import Optional, Dict, Any
 import base64
+import logging
 from io import BytesIO
 from PIL import Image
 
@@ -9,25 +9,9 @@ from app.services.inference import predict_crop
 from app.services.recommendation import engine as rec_engine
 
 router = APIRouter()
+logger = logging.getLogger("uvicorn.error")
 
-# Response model
-class RecommendationResponse(BaseModel):
-    disease: str
-    severity: str
-    chemical_treatment: Optional[str] = None
-    organic_treatment: Optional[str] = None
-    prevention: Optional[str] = None
-    error: Optional[str] = None
-
-class PredictionResponse(BaseModel):
-    crop: str
-    disease: str
-    raw_disease: str
-    confidence: float
-    severity: str
-    recommendation: Optional[RecommendationResponse] = None
-
-@router.post("/predict", response_model=PredictionResponse)
+@router.post("/predict")
 async def predict_endpoint(
     crop: str = Form(..., description="Crop name, e.g., 'bean'"),
     file: Optional[UploadFile] = File(None, description="Upload an image file"),
@@ -35,38 +19,66 @@ async def predict_endpoint(
 ):
     """
     Predict crop disease and generate recommendations.
+    Refactored to match Supabase Edge Function and DB schema.
     """
+    # 2. Normalize crop input: lowercase and strip
+    crop = crop.lower().strip()
+    print("crop:", crop)
 
-    # Load image
-    if file:
-        try:
-            image = Image.open(file.file)
-        except Exception:
-            raise HTTPException(status_code=400, detail="Invalid uploaded image")
-    elif image_base64:
-        try:
+    # 3. Load image safely: ensure convert("RGB")
+    try:
+        if file:
+            image_content = await file.read()
+            image = Image.open(BytesIO(image_content)).convert("RGB")
+        elif image_base64:
+            # Base64 loading logic
             image_data = base64.b64decode(image_base64)
-            image = Image.open(BytesIO(image_data))
-        except Exception:
-            raise HTTPException(status_code=400, detail="Invalid Base64 image")
-    else:
-        raise HTTPException(status_code=400, detail="No image provided")
+            image = Image.open(BytesIO(image_data)).convert("RGB")
+        else:
+            raise HTTPException(status_code=400, detail="No image provided")
+    except Exception as e:
+        logger.error(f"Image load error: {str(e)}")
+        raise HTTPException(status_code=400, detail="Invalid image format or source")
 
-    # Predict Disease
+    # 4. Wrap predict_crop in try/catch
     try:
         result = predict_crop(crop, image)
+        print("prediction:", result)
     except ValueError as e:
+        # Handle unsupported crop or model error
+        logger.error(f"Prediction input error: {str(e)}")
         raise HTTPException(status_code=400, detail=str(e))
+    except Exception as e:
+        logger.error(f"Inference error: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Disease prediction failed: {str(e)}")
 
-    # Generate Recommendation via RAG + Groq
-    recommendation = rec_engine.generate_recommendation(result)
-    
-    # Ensure the final response has the keys the Edge Function expects
-    return {
-        "crop": result["crop"],
-        "disease": result["display_label"], # Use the clean label for the DB 'name'
-        "raw_disease": result["disease"],   # Keep the raw label for debugging
-        "confidence": result["confidence"],
-        "severity": result["severity"],
+    # 5. Wrap recommendation engine in try/catch so it NEVER crashes the API
+    recommendation = None
+    try:
+        # Generate Recommendation via RAG + Groq
+        raw_rec = rec_engine.generate_recommendation(result)
+        
+        # 8. Normalize recommendation structure exactly as required
+        if raw_rec and isinstance(raw_rec, dict) and "error" not in raw_rec:
+            recommendation = {
+                "disease": str(raw_rec.get("disease", result.get("display_label", "unknown"))),
+                "severity": str(raw_rec.get("severity", result.get("severity", "medium"))),
+                "chemical_treatment": str(raw_rec.get("chemical_treatment", "Not specified")),
+                "organic_treatment": str(raw_rec.get("organic_treatment", "Not specified")),
+                "prevention": str(raw_rec.get("prevention", "Not specified"))
+            }
+    except Exception as e:
+        logger.error(f"Recommendation engine error: {str(e)}")
+        recommendation = None  # If it fails → return recommendation = null
+
+    # 6 & 7. Normalize final response BEFORE returning
+    # Always return disease, confidence, severity, recommendation
+    # No extra fields like crop or raw_disease as per Requirement 10
+    final_response = {
+        "disease": str(result.get("display_label", "unknown")),
+        "confidence": float(result.get("confidence", 0.0)),
+        "severity": str(result.get("severity", "medium")),
         "recommendation": recommendation
     }
+
+    return final_response
